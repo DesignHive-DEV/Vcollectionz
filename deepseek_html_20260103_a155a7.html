@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vcollectionz | Traditional Pakistani Clothes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary: #f9f5f0;
+            --accent: #ffab91;
+            --text-dark: #3e2723;
+            --text-light: #5d4037;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background-color: var(--secondary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 8px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cart-icon {
+            position: relative;
+            font-size: 22px;
+            color: var(--text-dark);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .color-options, .size-options {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .color-options span, .size-options span {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+        
+        .color-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid #eee;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .color-circle:hover, .color-circle.active {
+            transform: scale(1.2);
+            border-color: var(--text-dark);
+        }
+        
+        .size-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: white;
+            margin-right: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .size-btn:hover, .size-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .product-actions .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: var(--white);
+            padding: 80px 0;
+            margin-bottom: 60px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cart-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            padding: 30px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .cart-items {
+            margin-bottom: 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-meta {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .footer-column p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-vest-patches"></i> Vcollectionz
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Exquisite Traditional Pakistani Clothes</h1>
+            <p>Discover our exclusive collection of handcrafted dresses, suits, and accessories that celebrate the rich heritage of Pakistani fashion.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Featured Collection</h2>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Vcollectionz</h2>
+                    <p>Vcollectionz is a premium boutique specializing in traditional Pakistani female clothing. We bring you the finest collection of embroidered dresses, elegant suits, and beautiful accessories that reflect the rich cultural heritage of Pakistan.</p>
+                    <p>Our designs blend traditional craftsmanship with contemporary styles, ensuring each piece is both timeless and fashionable. We work directly with skilled artisans to bring you authentic, high-quality garments.</p>
+                    <p>Each piece in our collection is carefully selected to offer you the best in Pakistani fashion, whether for everyday wear, special occasions, or wedding festivities.</p>
+                    
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="https://instagram.com/Vcollectionz" target="_blank" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Follow us on Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Traditional Pakistani Dress">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Shopping Cart</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+                <p id="emptyCartMessage" style="text-align: center; color: #777; display: none;">Your cart is empty</p>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            
+            <div class="product-actions">
+                <button class="btn" id="continueShopping">Continue Shopping</button>
+                <button class="btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Vcollectionz</h3>
+                    <p>Bringing you the finest traditional Pakistani clothing with a modern touch. Experience the beauty of authentic craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/Vcollectionz" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Collections</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</li>
+                        <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@vcollectionz.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vcollectionz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                name: "Embroidered Lawn Suit",
+                price: 85.00,
+                image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+                colors: ["#c62828", "#f8bbd0", "#4a148c", "#ffffff"],
+                sizes: ["XS", "S", "M", "L", "XL"],
+                description: "Beautifully embroidered lawn suit with intricate thread work."
+            },
+            {
+                id: 2,
+                name: "Traditional Bridal Lehenga",
+                price: 450.00,
+                image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                colors: ["#ffebee", "#fce4ec", "#ffccbc", "#d7ccc8"],
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                description: "Exquisite bridal lehenga with heavy embroidery and stone work."
+            },
+            {
+                id: 3,
+                name: "Handworked Silk Saree",
+                price: 220.00,
+                image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                colors: ["#ff9800", "#4caf50", "#2196f3", "#9c27b0"],
+                sizes: ["One Size"],
+                description: "Elegant silk saree with handworked embroidery and zari border."
+            },
+            {
+                id: 4,
+                name: "Pakistani Party Wear",
+                price: 120.00,
+                image: "https://images.unsplash.com/photo-1585487000160-6eb9ce6b5aae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80",
+                colors: ["#ff5722", "#00bcd4", "#8bc34a", "#ffc107"],
+                sizes: ["XS", "S", "M", "L"],
+                description: "Stylish party wear with modern cuts and traditional embellishments."
+            },
+            {
+                id: 5,
+                name: "Embroidered Kurti Set",
+                price: 75.00,
+                image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2062&q=80",
+                colors: ["#795548", "#607d8b", "#3f51b5", "#e91e63"],
+                sizes: ["XS", "S", "M", "L", "XL"],
+                description: "Comfortable and stylish embroidered kurti set for everyday wear."
+            },
+            {
+                id: 6,
+                name: "Designer Shawl Collection",
+                price: 65.00,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+                colors: ["#263238", "#ffeb3b", "#009688", "#9e9e9e"],
+                sizes: ["One Size"],
+                description: "Beautifully designed shawls with intricate embroidery and tassels."
+            }
+        ];
+
+        // Shopping Cart
+        let cart = [];
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        // DOM Elements
+        const productsGrid = document.getElementById('productsGrid');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartCountElement = document.getElementById('cartCount');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotalElement = document.getElementById('cartTotal');
+        const emptyCartMessage = document.getElementById('emptyCartMessage');
+        const continueShopping = document.getElementById('continueShopping');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        // Initialize the product display
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.className = 'product-card';
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #666;">${product.description}</p>
+                        
+                        <div class="color-options">
+                            <span>Color:</span>
+                            ${product.colors.map(color => `
+                                <div class="color-circle ${product.colors.indexOf(color) === 0 ? 'active' : ''}" 
+                                     style="background-color: ${color};" 
+                                     data-color="${color}">
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="size-options">
+                            <span>Size:</span>
+                            ${product.sizes.map(size => `
+                                <button class="size-btn ${product.sizes.indexOf(size) === 0 ? 'active' : ''}" 
+                                        data-size="${size}">${size}</button>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="btn btn-outline add-to-cart" data-id="${product.id}">Add to Cart</button>
+                            <button class="btn buy-now" data-id="${product.id}">Buy Now</button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productElement);
+            });
+            
+            // Add event listeners to color options
+            document.querySelectorAll('.color-circle').forEach(circle => {
+                circle.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('.color-circle').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Add event listeners to size options
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Add event listeners to add to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+            
+            // Add event listeners to buy now buttons
+            document.querySelectorAll('.buy-now').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                    openCartModal();
+                });
+            });
+        }
+
+        // Add item to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Get selected color and size
+            const productCard = document.querySelector(`[data-id="${productId}"]`).closest('.product-card');
+            const selectedColor = productCard.querySelector('.color-circle.active').style.backgroundColor;
+            const selectedSize = productCard.querySelector('.size-btn.active').textContent;
+            
+            // Check if item already exists in cart
+            const existingItemIndex = cart.findIndex(item => 
+                item.id === productId && 
+                item.color === selectedColor && 
+                item.size === selectedSize
+            );
+            
+            if (existingItemIndex !== -1) {
+                // Increment quantity if item already in cart
+                cart[existingItemIndex].quantity++;
+            } else {
+                // Add new item to cart
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    color: selectedColor,
+                    size: selectedSize,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart count and total
+            updateCart();
+            
+            // Show feedback to user
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Update cart UI
+        function updateCart() {
+            // Calculate total items and price
+            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            // Update cart count in header
+            cartCountElement.textContent = cartCount;
+            
+            // Update cart modal if open
+            renderCartItems();
+        }
+
+        // Render cart items in modal
+        function renderCartItems() {
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartTotalElement.textContent = '$0.00';
+                return;
+            }
+            
+            emptyCartMessage.style.display = 'none';
+            
+            cart.forEach((item, index) => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-meta">Color: <span style="color: ${item.color}">●</span> | Size: ${item.size}</div>
+                        <div class="cart-item-meta">Quantity: ${item.quantity}</div>
+                        <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                    </div>
+                    <button class="remove-item" data-index="${index}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    removeFromCart(index);
+                });
+            });
+            
+            // Update total
+            cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+        }
+
+        // Remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: var(--primary);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 4px;
+                box-shadow: var(--shadow);
+                z-index: 10000;
+                transform: translateX(150%);
+                transition: transform 0.3s ease-in-out;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Animate out and remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(150%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Open cart modal
+        function openCartModal() {
+            cartModal.style.display = 'flex';
+            renderCartItems();
+        }
+
+        // Close cart modal
+        function closeCartModal() {
+            cartModal.style.display = 'none';
+        }
+
+        // Initialize event listeners
+        function initEventListeners() {
+            // Cart icon click
+            cartIcon.addEventListener('click', openCartModal);
+            
+            // Close cart modal
+            closeCart.addEventListener('click', closeCartModal);
+            continueShopping.addEventListener('click', closeCartModal);
+            
+            // Checkout button
+            checkoutBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                
+                alert('Thank you for your order! This is a demo website. In a real e-commerce site, you would be redirected to a checkout page.');
+                cart = [];
+                updateCart();
+                closeCartModal();
+            });
+            
+            // Close modal when clicking outside
+            cartModal.addEventListener('click', function(e) {
+                if (e.target === cartModal) {
+                    closeCartModal();
+                }
+            });
+        }
+
+        // Initialize the website
+        function init() {
+            renderProducts();
+            initEventListeners();
+            updateCart(); // Initialize cart count
+        }
+
+        // Start the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
